@@ -1,5 +1,6 @@
 let setcionTimer = document.getElementById("section_timer");
 let countDown = new Date("Jan 5, 2026 15:37:25").getTime();
+
 let timer = setInterval(() => {
   let now = new Date().getTime();
   let distance = countDown - now;
@@ -131,20 +132,74 @@ let sections = [
       },
     ],
   },
+  {
+    id: "section3",
+    products: [
+      {
+        discount: "-40%",
+        image: "../image/items/item-1.png",
+        name: "IPS LCD Gaming Monitor",
+        price: "$120",
+        rating: 5,
+        reviews: 88,
+      },
+      {
+        discount: "-40%",
+        image: "../image/items/item-10.png",
+        name: "S-Series Comfort Chair",
+        price: "$120",
+        rating: 5,
+        reviews: 88,
+      },
+      {
+        discount: "-40%",
+        image: "../image/items/item-2.png",
+        name: "HAVIT HV-G92 Gamepad",
+        price: "$120",
+        rating: 5,
+        reviews: 88,
+      },
+      {
+        discount: "-40%",
+        image: "../image/items/item-4.png",
+        name: "HAVIT HV-G92 Gamepad",
+        price: "$120",
+        rating: 5,
+        reviews: 88,
+      },
+      {
+        discount: "-30%",
+        image: "../image/items/item-5.png",
+        name: "Wireless Headphones",
+        price: "$150",
+        rating: 4,
+        reviews: 120,
+      },
+      {
+        discount: "-30%",
+        image: "../image/items/item-13.png",
+        name: "Wireless Headphones",
+        price: "$150",
+        rating: 4,
+        reviews: 120,
+      },
+      {
+        discount: "-30%",
+        image: "../image/items/item-12.png",
+        name: "Wireless Headphones",
+        price: "$150",
+        rating: 4,
+        reviews: 120,
+      },
+    ],
+  },
 ];
 
 sections.forEach((section) => {
-  let container = document.getElementById(section.id);
+  let sectionContainer = document.getElementById(section.id);
 
-  container.innerHTML = `
-      <div class="slider">
-        <div class="slides"></div>
-      </div>
-      <div class="dots"></div>
-    `;
-
-  let sliderContainer = document.querySelector(".slides");
-  let dotsContainer = document.getElementById("dots");
+  let slidesContainer = sectionContainer.querySelector(".slides");
+  let dotsContainer = sectionContainer.querySelector(".dots");
 
   let currentIndex = 0;
   let visibleCards = 4;
@@ -166,10 +221,10 @@ sections.forEach((section) => {
         ${'<i class="fa-regular fa-star"></i>'.repeat(5 - product.rating)}
       </div>
     `;
-    sliderContainer.appendChild(card);
+    slidesContainer.appendChild(card);
   });
 
-  let cards = document.querySelectorAll(".product-card");
+  let cards = slidesContainer.querySelectorAll(".product-card");
   let totalSlides = cards.length - visibleCards + 1;
 
   for (let i = 0; i < totalSlides; i++) {
@@ -180,7 +235,7 @@ sections.forEach((section) => {
     dotsContainer.appendChild(dot);
   }
 
-  let dots = document.querySelectorAll(".dot");
+  let dots = dotsContainer.querySelectorAll(".dot");
 
   function moveToSlide(index) {
     currentIndex = index;
@@ -188,7 +243,7 @@ sections.forEach((section) => {
   }
 
   function updateSlider() {
-    sliderContainer.style.transform = `translateX(-${
+    slidesContainer.style.transform = `translateX(-${
       currentIndex * (100 / visibleCards)
     }%)`;
     dots.forEach((dot) => dot.classList.remove("active"));
