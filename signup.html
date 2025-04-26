@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+  </head>
+  <body>
+    <div class="auth-container">
+      <form id="signupForm" class="auth-form">
+        <h2>Create Account</h2>
+        <div class="input-group">
+          <input
+            type="email"
+            id="signupEmail"
+            placeholder="Email Address"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <input
+            type="password"
+            id="signupPassword"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <button type="submit" class="auth-button">Sign Up</button>
+        <p class="auth-switch">
+          Already have an account? <a href="signin.html">Sign In</a>
+        </p>
+        <p id="signupError" class="error-msg"></p>
+      </form>
+    </div>
+
+    <script src="js/auth.js"></script>
+  </body>
+</html>
