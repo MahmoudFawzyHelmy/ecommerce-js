@@ -277,3 +277,19 @@ header {
   font-weight: bold;
   cursor: pointer;
 }
+
+/* speeker section */
+section .container_speeker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--colo-dark-1);
+}
+section .caption p {
+  color: var(--color-green);
+}
+section .caption h3 {
+  font-size: 3.125rem;
+  color: var(--colo-white-1);
+  font-weight: 800;
+}
