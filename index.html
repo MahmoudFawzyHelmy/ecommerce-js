@@ -27,27 +27,35 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="nav">
-      <div class="container nav_container">
-        <a href="#" class="logo">E-Commerce</a>
-        <ul class="nav_list">
-          <li class="nav_item"><a href="#" class="nav_link">Home</a></li>
-          <li class="nav_item"><a href="#" class="nav_link">About</a></li>
-          <li class="nav_item"><a href="#" class="nav_link">Contact</a></li>
-          <li class="nav_item">
-            <a href="signup.html" class="nav_link">Sign Up</a>
-          </li>
-        </ul>
-        <div class="nav_item">
-          <form action="" class="nav_form">
-            <input type="text" class="nav_input" placeholder="Search here" />
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </form>
-          <i class="fa-regular fa-heart heart"></i>
-          <i class="fa-solid fa-cart-shopping cart"></i>
-        </div>
-      </div>
-    </nav>
+<!-- Navbar -->
+<nav class="nav">
+  <div class="container nav_container">
+    <a href="#" class="logo">E-Commerce</a>
+    <ul class="nav_list">
+      <li class="nav_item"><a href="#" class="nav_link">Home</a></li>
+      <li class="nav_item"><a href="#" class="nav_link">About</a></li>
+      <li class="nav_item"><a href="#" class="nav_link">Contact</a></li>
+      <li class="nav_item">
+        <a href="signup.html" class="nav_link">Sign Up</a>
+      </li>
+    </ul>
+    <div class="nav_item">
+      <form action="" class="nav_form">
+        <input type="text" class="nav_input" placeholder="Search here" />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </form>
+      <i class="fa-regular fa-heart heart"></i>
+      <a href="cart.html" class="text-decoration-none">
+        <i class="fa-solid fa-cart-shopping cart position-relative">
+          <span id="cart-count" class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            0
+          </span>
+        </i>
+      </a>
+    </div>
+  </div>
+</nav>
+
 
     <!-- Header -->
     <header>
@@ -267,6 +275,86 @@
         </div>
       </div>
     </section>
+
+    <!-- services -->
+    <section class="section">
+      <div class="container my-5 p-5">
+        <div class="row text-center">
+          <div class="col-sm-12 col-md-4">
+            <div class="serv">
+              <img src="image/icons/service-1.png" alt="" />
+              <div class="ser_content my-4">
+                <h4>FAST AND FREE DELIVERY</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-4">
+            <div class="serv">
+              <img src="image/icons/service-2.png" alt="" />
+              <div class="ser_content my-4">
+                <h4>24/7 SUPPORTY</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-4">
+            <div class="serv">
+              <img src="image/icons/service-3.png" alt="" />
+              <div class="ser_content my-4">
+                <h4>MONEY BACK GUARANTY</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer  -->
+    <footer >
+      <div class="container py-5"">
+      <div class="row">
+        <div class="col-12 mb-4">
+          <h2 class="footer-heading">Exclusive</h2>
+          <p class="footer-text">
+            Lorem ipsum, dolor sit amet consectetur adipiscing elit.<br />Exercitationem
+            fuga harum voluptate?
+          </p>
+        </div>
+
+        <div class="col-md-4 footer-column">
+          <h3>Support</h3>
+          <a href="#" class="footer-link">Mahmoud Fawzy</a>
+          <a href="#" class="footer-link">mahmoudfawzy.helmy@gmail.com</a>
+          <a href="#" class="footer-link">01094755985</a>
+   
+        </div>
+
+        <div class="col-md-4 footer-column">
+          <h3>Support</h3>
+          <a href="#" class="footer-link">Account</a>
+          <a href="#" class="footer-link">Login / Register</a>
+          <a href="#" class="footer-link">Cart</a>
+          <a href="#" class="footer-link">Shop</a>
+        </div>
+
+        <div class="col-md-4 footer-column">
+          <h3>Support</h3>
+          <a href="#" class="footer-link">Privacy policy</a>
+          <a href="#" class="footer-link">Terms of use</a>
+          <a href="#" class="footer-link">FAQ's</a>
+          <a href="#" class="footer-link">Contact</a>
+        </div>
+
+ 
+        <div class="col-12 copyright">
+          <p>Copyright Exclusive 2025. All right reserved</p>
+        </div>
+      </div>
+      
+    </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="js/all.min.js"></script>

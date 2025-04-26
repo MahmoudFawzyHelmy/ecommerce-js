@@ -143,24 +143,32 @@ sections.forEach((section) => {
   let currentIndex = 0;
   let visibleCards = 4;
 
-  section.products.forEach((product) => {
-    let card = document.createElement("div");
-    card.className = "product-card";
-    card.innerHTML = `
-      <div class="discount">${product.discount}</div>
-      <div class="icons">
-        <span><i class="fa-regular fa-heart"></i></span>
-        <span><i class="fa-solid fa-eye"></i></span>
-      </div>
-      <img src="${product.image}" alt="${product.name}" class="product-image" />
-      <h3 class="product-name">${product.name}</h3>
-      <p class="product-price">${product.price}</p>
-      <div class="rating">
-        ${'<i class="fa-solid fa-star"></i>'.repeat(product.rating)}
-        ${'<i class="fa-regular fa-star"></i>'.repeat(5 - product.rating)}
-      </div>
-    `;
-    slidesContainer.appendChild(card);
+  sections.forEach((section) => {
+    let sectionContainer = document.getElementById(section.id);
+    let slidesContainer = sectionContainer.querySelector(".slides");
+
+    section.products.forEach((product, index) => {
+      let card = document.createElement("div");
+      card.className = "product-card";
+      card.innerHTML = `
+        <div class="discount">${product.discount}</div>
+        <div class="icons">
+          <span><i class="fa-regular fa-heart"></i></span>
+          <span><i class="fa-solid fa-eye"></i></span>
+        </div>
+        <img src="${product.image}" alt="${
+        product.name
+      }" class="product-image" />
+        <h3 class="product-name">${product.name}</h3>
+        <p class="product-price">${product.price}</p>
+        <div class="rating">
+          ${'<i class="fa-solid fa-star"></i>'.repeat(product.rating)}
+          ${'<i class="fa-regular fa-star"></i>'.repeat(5 - product.rating)}
+        </div>
+        <button class="add-to-cart btn btn-primary my-3" data-index="${index}">Add to Cart</button>
+      `;
+      slidesContainer.appendChild(card);
+    });
   });
 
   let cards = slidesContainer.querySelectorAll(".product-card");
@@ -289,7 +297,48 @@ exploreProducts.forEach((section) => {
         ${'<i class="fa-regular fa-star"></i>'.repeat(5 - product.rating)}
         <span class="reviews">(${product.reviews})</span>
       </div>
+      
     `;
     expProductsContainer.appendChild(card);
   });
 });
+
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("add-to-cart")) {
+    const index = e.target.getAttribute("data-index");
+    const sectionIndex =
+      e.target.closest(".slider-section").id.replace("section", "") - 1;
+    const product = sections[sectionIndex].products[index];
+    addToCart(product);
+  }
+});
+
+window.addToCart = function (product) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const existingItem = cart.find((item) => item.id === product.id);
+
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({
+      ...product,
+      quantity: 1,
+      id: product.name.toLowerCase().replace(/\s+/g, "-") + "-" + Date.now(),
+    });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  alert("" + product.name + " added to cart");
+};
+
+window.updateCartCount = function () {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartCount = document.getElementById("cart-count");
+  if (cartCount) {
+    cartCount.textContent = cart.reduce(
+      (total, item) => total + item.quantity,
+      0
+    );
+  }
+};

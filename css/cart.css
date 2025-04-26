@@ -1,0 +1,22 @@
+.cart-item {
+  transition: all 0.3s ease;
+}
+.cart-item:hover {
+  background-color: #f8f9fa;
+}
+.quantity-btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quantity-input {
+  width: 50px;
+  text-align: center;
+}
+.product-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
