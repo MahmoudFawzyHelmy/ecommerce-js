@@ -132,19 +132,19 @@ products.forEach((product) => {
   let card = document.createElement("div");
   card.className = "product-card";
   card.innerHTML = `
-    <div class="discount">${product.discount}</div>
-    <div class="icons">
-      <span><i class="fa-regular fa-heart"></i></span>
-      <span><i class="fa-solid fa-eye"></i></span>
-    </div>
-    <img src="${product.image}" alt="${product.name}" class="product-image" />
-    <h3 class="product-name">${product.name}</h3>
-    <p class="product-price">${product.price}</p>
-    <div class="rating">
-      ${'<i class="fa-solid fa-star"></i>'.repeat(product.rating)}
-      ${'<i class="fa-regular fa-star"></i>'.repeat(5 - product.rating)}
-    </div>
-  `;
+      <div class="discount">${product.discount}</div>
+      <div class="icons">
+        <span><i class="fa-regular fa-heart"></i></span>
+        <span><i class="fa-solid fa-eye"></i></span>
+      </div>
+      <img src="${product.image}" alt="${product.name}" class="product-image" />
+      <h3 class="product-name">${product.name}</h3>
+      <p class="product-price">${product.price}</p>
+      <div class="rating">
+        ${'<i class="fa-solid fa-star"></i>'.repeat(product.rating)}
+        ${'<i class="fa-regular fa-star"></i>'.repeat(5 - product.rating)}
+      </div>
+    `;
   sliderContainer.appendChild(card);
 });
 
