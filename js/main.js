@@ -132,67 +132,6 @@ let sections = [
       },
     ],
   },
-  {
-    id: "section3",
-    products: [
-      {
-        discount: "-40%",
-        image: "../image/items/item-1.png",
-        name: "IPS LCD Gaming Monitor",
-        price: "$120",
-        rating: 5,
-        reviews: 88,
-      },
-      {
-        discount: "-40%",
-        image: "../image/items/item-10.png",
-        name: "S-Series Comfort Chair",
-        price: "$120",
-        rating: 5,
-        reviews: 88,
-      },
-      {
-        discount: "-40%",
-        image: "../image/items/item-2.png",
-        name: "HAVIT HV-G92 Gamepad",
-        price: "$120",
-        rating: 5,
-        reviews: 88,
-      },
-      {
-        discount: "-40%",
-        image: "../image/items/item-4.png",
-        name: "HAVIT HV-G92 Gamepad",
-        price: "$120",
-        rating: 5,
-        reviews: 88,
-      },
-      {
-        discount: "-30%",
-        image: "../image/items/item-5.png",
-        name: "Wireless Headphones",
-        price: "$150",
-        rating: 4,
-        reviews: 120,
-      },
-      {
-        discount: "-30%",
-        image: "../image/items/item-13.png",
-        name: "Wireless Headphones",
-        price: "$150",
-        rating: 4,
-        reviews: 120,
-      },
-      {
-        discount: "-30%",
-        image: "../image/items/item-12.png",
-        name: "Wireless Headphones",
-        price: "$150",
-        rating: 4,
-        reviews: 120,
-      },
-    ],
-  },
 ];
 
 sections.forEach((section) => {
@@ -257,4 +196,100 @@ sections.forEach((section) => {
     if (currentIndex >= totalSlides) currentIndex = 0;
     updateSlider();
   }, 5000);
+});
+
+// section products
+let exploreProducts = [
+  {
+    id: "section3",
+    products: [
+      {
+        discount: "-40%",
+        image: "../image/items/item-1.png",
+        name: "IPS LCD Gaming Monitor",
+        price: "$120",
+        rating: 5,
+        reviews: 88,
+      },
+      {
+        discount: "-40%",
+        image: "../image/items/item-10.png",
+        name: "S-Series Comfort Chair",
+        price: "$120",
+        rating: 5,
+        reviews: 88,
+      },
+      {
+        discount: "-40%",
+        image: "../image/items/item-2.png",
+        name: "HAVIT HV-G92 Gamepad",
+        price: "$120",
+        rating: 5,
+        reviews: 88,
+      },
+      {
+        discount: "-40%",
+        image: "../image/items/item-4.png",
+        name: "HAVIT HV-G92 Gamepad",
+        price: "$120",
+        rating: 5,
+        reviews: 88,
+      },
+      {
+        discount: "-30%",
+        image: "../image/items/item-5.png",
+        name: "Wireless Headphones",
+        price: "$150",
+        rating: 4,
+        reviews: 120,
+      },
+      {
+        discount: "-30%",
+        image: "../image/items/item-13.png",
+        name: "Wireless Headphones",
+        price: "$150",
+        rating: 4,
+        reviews: 120,
+      },
+      {
+        discount: "-30%",
+        image: "../image/items/item-12.png",
+        name: "Wireless Headphones",
+        price: "$150",
+        rating: 4,
+        reviews: 120,
+      },
+      {
+        discount: "-30%",
+        image: "../image/items/item-11.png",
+        name: "Wireless Headphones",
+        price: "$150",
+        rating: 4,
+        reviews: 120,
+      },
+    ],
+  },
+];
+let expProductsContainer = document.getElementById("expProduct");
+
+exploreProducts.forEach((section) => {
+  section.products.forEach((product) => {
+    let card = document.createElement("div");
+    card.className = "product-card";
+    card.innerHTML = `
+      <div class="icons">
+        <span><i class="fa-regular fa-heart"></i></span>
+        <span><i class="fa-solid fa-eye"></i></span>
+      </div>
+      <img src="${product.image}" alt="${product.name}" class="product-image" />
+      <h3 class="product-name">${product.name}</h3>
+      <p class="product-price">${product.price}</p>
+      <div class="rating">
+        ${'<i class="fa-solid fa-star"></i>'.repeat(product.rating)}
+        ${'<i class="fa-regular fa-star"></i>'.repeat(5 - product.rating)}
+        <span class="reviews">(${product.reviews})</span>
+      </div>
+    `;
+    expProductsContainer.appendChild(card);
+  });
 });
