@@ -397,3 +397,16 @@ section .caption h3 {
     height: 120px;
   }
 }
+
+/* gallery */
+.gallery_item {
+  width: 100%;
+  position: relative;
+}
+.gallery_content {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 10;
+  color: var(--colo-white-1);
+}
