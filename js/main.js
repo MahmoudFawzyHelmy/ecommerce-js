@@ -313,7 +313,12 @@ document.addEventListener("click", function (e) {
   }
 });
 
-window.addToCart = function (product) {
+const updateCartCount = function (cartLength) {
+  const cartCount = document.getElementById("cart-count");
+
+  if (cartCount) cartCount.innerHTML = cartLength;
+};
+const addToCart = function (product) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   const existingItem = cart.find((item) => item.id === product.id);
 
@@ -328,17 +333,11 @@ window.addToCart = function (product) {
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
-  updateCartCount();
-  alert("" + product.name + " added to cart");
+  const cartLength = cart.reduce((total, item) => total + item.quantity, 0);
+
+  updateCartCount(cartLength);
 };
 
-window.updateCartCount = function () {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const cartCount = document.getElementById("cart-count");
-  if (cartCount) {
-    cartCount.textContent = cart.reduce(
-      (total, item) => total + item.quantity,
-      0
-    );
-  }
-};
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+updateCartCount(cartCount);
