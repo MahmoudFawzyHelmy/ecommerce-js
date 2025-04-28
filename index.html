@@ -27,56 +27,106 @@
     </div>
 
     <!-- Navbar -->
-<!-- Navbar -->
-<nav class="nav">
-  <div class="container nav_container">
-    <a href="#" class="logo">E-Commerce</a>
-    <ul class="nav_list">
-      <li class="nav_item"><a href="#" class="nav_link">Home</a></li>
-      <li class="nav_item"><a href="#" class="nav_link">About</a></li>
-      <li class="nav_item"><a href="#" class="nav_link">Contact</a></li>
-      <li class="nav_item">
-        <a href="signup.html" class="nav_link">Sign Up</a>
-      </li>
-    </ul>
-    <div class="nav_item">
-      <form action="" class="nav_form">
-        <input type="text" class="nav_input" placeholder="Search here" />
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </form>
-      <i class="fa-regular fa-heart heart"></i>
-      <div class="position-relative">
-  <a href="cart.html" class="text-decoration-none" id="cart">
-  <i class="fa-solid fa-cart-shopping cart ">
-  </i>
-    <span id="cart-count" class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-      0
-    </span>
-</div>
-      </a>
-      
-    </div>
-  </div>
-</nav>
-
+    <!-- Navbar -->
+    <nav class="nav navbar navbar-expand-lg">
+      <div class="container nav_container">
+        <a href="#" class="logo">E-Commerce</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="signup.html">Sign Up</a>
+            </li>
+          </ul>
+          <form class="d-flex ms-3" role="search">
+            <input
+              class="form-control me-2 fs-3"
+              type="search"
+              placeholder="Search here"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+          <i class="fa-regular fa-heart mx-3"></i>
+          <a href="cart.html" class="position-relative text-decoration-none">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span
+              id="cart-count"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >
+              0
+            </span>
+          </a>
+        </div>
+      </div>
+    </nav>
 
     <!-- Header -->
     <header>
       <div class="container header_container">
-        <div class="header_filter">
-          <ul class="header_link">
-            <li><a href="#">Woman's Fashion</a></li>
-            <li><a href="#">Men's Fashion</a></li>
-            <li><a href="#">Electronics</a></li>
-            <li><a href="#">Home & Lifestyle</a></li>
-            <li><a href="#">Medicine</a></li>
-            <li><a href="#">Sports & Outdoor</a></li>
-            <li><a href="#">Baby's & Toys</a></li>
-            <li><a href="#">Groceries & Pets</a></li>
-            <li><a href="#">Health & Beauty</a></li>
-          </ul>
+        <div class="row">
+          <div class="col-sm-12 col-md-3 col-lg-3">
+            <div class="header_filter">
+              <ul class="header_link">
+                <li>
+                  <a href="filter.html?category=womens-fashion"
+                    >Woman's Fashion</a
+                  >
+                </li>
+                <li>
+                  <a href="filter.html?category=mens-fashion">Men's Fashion</a>
+                </li>
+                <li>
+                  <a href="filter.html?category=electronics">Electronics</a>
+                </li>
+                <li>
+                  <a href="filter.html?category=home-lifestyle"
+                    >Home & Lifestyle</a
+                  >
+                </li>
+                <li><a href="filter.html?category=medicine">Medicine</a></li>
+                <li>
+                  <a href="filter.html?category=sports-outdoor"
+                    >Sports & Outdoor</a
+                  >
+                </li>
+                <li>
+                  <a href="filter.html?category=babies-toys">Baby's & Toys</a>
+                </li>
+                <li>
+                  <a href="filter.html?category=groceries-pets"
+                    >Groceries & Pets</a
+                  >
+                </li>
+                <li>
+                  <a href="filter.html?category=health-beauty"
+                    >Health & Beauty</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-3 col-lg-3">
+            <div class="item">
+              <img src="image/header.png" alt="" class="header_img" />
+            </div>
+          </div>
         </div>
-        <img src="image/header.png" alt="" class="header_img" />
       </div>
     </header>
 
@@ -315,49 +365,50 @@
     </section>
 
     <!-- footer  -->
-    <footer >
-      <div class="container py-5"">
-      <div class="row">
-        <div class="col-12 mb-4">
-          <h2 class="footer-heading">Exclusive</h2>
-          <p class="footer-text">
-            Lorem ipsum, dolor sit amet consectetur adipiscing elit.<br />Exercitationem
-            fuga harum voluptate?
-          </p>
-        </div>
+    <footer>
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-12 mb-4">
+            <h2 class="footer-heading">Exclusive</h2>
+            <p class="footer-text">
+              Lorem ipsum, dolor sit amet consectetur adipiscing elit.<br />Exercitationem
+              fuga harum voluptate?
+            </p>
+          </div>
 
-        <div class="col-md-4 footer-column">
-          <h3>Support</h3>
-          <a href="#" class="footer-link">Mahmoud Fawzy</a>
-          <a href="#" class="footer-link">mahmoudfawzy.helmy@gmail.com</a>
-          <a href="#" class="footer-link">01094755985</a>
-   
-        </div>
+          <div class="col-md-4 footer-column">
+            <h3>Support</h3>
+            <a href="#" class="footer-link">Mahmoud Fawzy</a>
+            <a href="#" class="footer-link">mahmoudfawzy.helmy@gmail.com</a>
+            <a href="#" class="footer-link">01094755985</a>
+          </div>
 
-        <div class="col-md-4 footer-column">
-          <h3>Support</h3>
-          <a href="#" class="footer-link">Account</a>
-          <a href="#" class="footer-link">Login / Register</a>
-          <a href="#" class="footer-link">Cart</a>
-          <a href="#" class="footer-link">Shop</a>
-        </div>
+          <div class="col-md-4 footer-column">
+            <h3>Support</h3>
+            <a href="#" class="footer-link">Account</a>
+            <a href="#" class="footer-link">Login / Register</a>
+            <a href="#" class="footer-link">Cart</a>
+            <a href="#" class="footer-link">Shop</a>
+          </div>
 
-        <div class="col-md-4 footer-column">
-          <h3>Support</h3>
-          <a href="#" class="footer-link">Privacy policy</a>
-          <a href="#" class="footer-link">Terms of use</a>
-          <a href="#" class="footer-link">FAQ's</a>
-          <a href="#" class="footer-link">Contact</a>
-        </div>
+          <div class="col-md-4 footer-column">
+            <h3>Support</h3>
+            <a href="#" class="footer-link">Privacy policy</a>
+            <a href="#" class="footer-link">Terms of use</a>
+            <a href="#" class="footer-link">FAQ's</a>
+            <a href="#" class="footer-link">Contact</a>
+          </div>
 
- 
-        <div class="col-12 copyright">
-          <p>Copyright Exclusive 2025. All right reserved</p>
+          <div class="col-12 copyright">
+            <p>Copyright Exclusive 2025. All right reserved</p>
+          </div>
         </div>
       </div>
-      
-    </div>
     </footer>
+
+    <a href="#" id="backToTop" title="Back to Top"
+      ><i class="fa-solid fa-arrow-up"></i
+    ></a>
 
     <!-- Scripts -->
     <script src="js/all.min.js"></script>

@@ -62,7 +62,7 @@ const renderCart = function () {
                 parseFloat(item.price.replace("$", "")) * item.quantity
               ).toFixed(2)}$</td>
               <td>
-                  <button class="btn btn-danger btn-sm" onclick="removeFromCart('${
+                  <button class="btn btn-danger btn-sm fs-4 rounded-5 p-3" onclick="removeFromCart('${
                     item.id
                   }')">
               Delete
@@ -116,3 +116,41 @@ document.addEventListener("DOMContentLoaded", function () {
   renderCart();
   updateCartCount();
 });
+
+const checkout = function () {
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  if (!currentUser) {
+    if (
+      confirm("You need to login to complete your purchase. Go to login page?")
+    ) {
+      window.location.href = "signin.html";
+    }
+    return;
+  }
+
+  if (cart.length === 0) {
+    alert("Your cart is empty!");
+    return;
+  }
+
+  const total = cart
+    .reduce(
+      (sum, item) =>
+        sum + parseFloat(item.price.replace("$", "")) * item.quantity,
+      0
+    )
+    .toFixed(2);
+
+  if (confirm(`Confirm purchase of ${cart.length} items for $${total}?`)) {
+    localStorage.removeItem("cart");
+
+    alert("Thank you for your purchase! Your order has been placed.");
+
+    renderCart();
+    updateCartCount();
+
+    window.location.href = "index.html";
+  }
+};

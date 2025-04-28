@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/product-details.css" />
+  </head>
+  <body>
+    <div class="top_nav">
+      <div class="container top_nav_container">
+        <div class="navContent">
+          <p class="content">
+            Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
+          </p>
+          <a href="#" class="navLink">SHOP NOW</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="nav">
+      <div class="container nav_container">
+        <a href="index.html" class="logo">E-Commerce</a>
+        <ul class="nav_list">
+          <li class="nav_item">
+            <a href="index.html" class="nav_link">Home</a>
+          </li>
+          <li class="nav_item"><a href="#" class="nav_link">About</a></li>
+          <li class="nav_item"><a href="#" class="nav_link">Contact</a></li>
+          <li class="nav_item">
+            <a href="signup.html" class="nav_link">Sign Up</a>
+          </li>
+        </ul>
+        <div class="nav_item">
+          <form action="" class="nav_form">
+            <input type="text" class="nav_input" placeholder="Search here" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </form>
+          <i class="fa-regular fa-heart heart"></i>
+          <div class="position-relative">
+            <a href="cart.html" class="text-decoration-none" id="cart">
+              <i class="fa-solid fa-cart-shopping cart"></i>
+              <span
+                id="cart-count"
+                class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              >
+                0
+              </span>
+            </a>
+          </div>
+          <span id="user-name" class="ms-3 d-none"></span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="product-image-container">
+            <img id="product-image" src="" alt="" class="img-fluid" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h1 id="product-name"></h1>
+          <div class="rating mb-3">
+            <span id="product-rating"></span>
+            <span id="product-reviews" class="ms-2"></span>
+          </div>
+          <h3 id="product-price" class="text-danger mb-3"></h3>
+          <p id="product-description" class="mb-4"></p>
+          <div class="d-flex align-items-center mb-4">
+            <div class="quantity-control d-flex me-4">
+              <button
+                class="btn btn-outline-secondary quantity-btn"
+                onclick="updateQuantity(-1)"
+              >
+                -
+              </button>
+              <input
+                type="text"
+                class="form-control quantity-input text-center"
+                value="1"
+                disabled
+              />
+              <button
+                class="btn btn-outline-secondary quantity-btn"
+                onclick="updateQuantity(1)"
+              >
+                +
+              </button>
+            </div>
+            <button id="add-to-cart-btn" class="btn btn-primary btn-lg">
+              Add to Cart
+            </button>
+          </div>
+          <div class="product-meta">
+            <p>
+              <strong>Category:</strong> <span id="product-category"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/product-details.js"></script>
+  </body>
+</html>
